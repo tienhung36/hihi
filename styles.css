@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7a9de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 55px; /* Tăng kích thước chữ */
+    color: #ffffff; /* Đổi màu chữ thành trắng */
+    position: relative;
+    z-index: 2;
+    animation: neon 1.2s infinite alternate;
+}
+
+h1 span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00c3ff, 0 0 70px #a4d8ee, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #009dff, 0 0 35px #8bb9d6, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('romance-icon.svg');
+    background-size: cover;
+    animation: heartbeat 1s infinite;
+    z-index: 1; /* Đảm bảo trái tim nằm phía dưới */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.8); }
+}
+
+#typed {
+    white-space: pre-wrap; /* Đảm bảo dấu cách được giữ lại */
+}
+.npyn {
+    font-size: 24px; /* Kích thước chữ NPYN */
+    animation: fadeInOut 2s infinite; /* Áp dụng animation */
+    margin-right: 10px; /* Khoảng cách giữa các chữ NPYN */
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; } /* Ẩn ở frame đầu và cuối */
+    50% { opacity: 1; } /* Hiển thị ở frame giữa */
+}
